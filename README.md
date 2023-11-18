@@ -1,5 +1,14 @@
 # BHacks-2023
 
+# Initial Brainstorming
+-Alarm app with picture if you sleep in that’s sent to all your friends
+-Gardening connection to connect gardeners and farmer’s markets
+-SNAKE
+    -Snake game where to the tiles are musical keys – the score you get is based off the quality of the music
+    -Snake game where the computer is trying to cut you off as another snake’
+-Google calendar (student link chrome extension) → switch to this maybe? (pivoted to this idea)
+-Fashion matching app (initially selected)
+
 # Failed Idea: ML Color Style Image Recognition Mobile App
 
 - Our app would have the user take a picture of themselves in their outfit, and then the app would use machine learning to determine the color scheme of the outfit to tell them if the color matches
