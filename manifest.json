@@ -11,7 +11,7 @@
       "identity"
     ],
     "oauth2": {
-      "client_id": "",
+      "client_id": "185723892123-ok1gjdcd7i9lk58sr3ntkjghjphtak9d.apps.googleusercontent.com",
       "scopes": [
         "https://www.googleapis.com/auth/calendar"
       ]
@@ -22,4 +22,5 @@
     "content_security_policy": {
       "extension_pages": "script-src 'self'; object-src 'self';"
     }
+    
   }
