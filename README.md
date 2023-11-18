@@ -37,10 +37,11 @@
 8. When on the course schedule page, present button to export course schedule to Google Calendar
 9. Export to Google Calendar successfully!
 
-
 Features to add:
 -Chrome extension should light up red when on a page that has a student link calendar
 -Button to export should only appear when on correct student link course schedule page
+-Backend to obscure api keys
+-Add a nice icon for our extension (maybe from [here](https://www.flaticon.com/free-icons/library))
 
 ## Timeline
 
