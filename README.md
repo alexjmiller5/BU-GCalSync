@@ -44,6 +44,21 @@
 - Add a nice icon for our extension (maybe from [here](https://www.flaticon.com/free-icons/library))
 - Create our own icon with GCal's icon and Student Link's icon/The letters BU
 - Create a .env file to store api keys
+- Make a 2-minute video with my submission
+- Create our devpost submission text
+
+### How to run locally
+- Clone the repo
+- Run `npm install`
+- Install direnv following [its documentation](https://direnv.net/docs/installation.html)
+- Add you client id as `export CLIENT_ID="YOUR_CLIENT_ID"`` to your .envrc file after you set up the OAuth on [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+- Run `direnv allow`
+- Run `npm run build`
+- Go to `chrome://extensions/` in your browser
+- Turn on developer mode
+- Click on "Load unpacked"
+- Select the folder containing the repo
+- You have successfully run our application!
 
 ### Timeline
 
