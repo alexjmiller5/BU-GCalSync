@@ -1,0 +1,16 @@
+{
+  "name": "bhacks-2023",
+  "version": "1.0.0",
+  "description": "Student Link Exporter to GCal",
+  "main": "background.js",
+  "scripts": {
+    "build": "node updateManifest.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Student Link to GCal",
+    "description": "Student Link GCal Exporter Chrome Extension",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup/oauth.html",
+      "default_icon": "images/calendar.png"
+    },
+    "permissions": [
+      "identity"
+    ],
+    "oauth2": {
+      "client_id": "CLIENT_ID_PLACEHOLDER",
+      "scopes": [
+        "https://www.googleapis.com/auth/calendar"
+      ]
+    },
+    "host_permissions": [
+      "https://www.googleapis.com/"
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+    }
+  }
