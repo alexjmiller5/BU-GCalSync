@@ -25,7 +25,7 @@
 
 ## Pivot Point: Student Link GCal Exporter Chrome Extension
 
-### User Stories
+### User Story
 
 1. Downloads chrome extension
 2. Clicks on extension icon
@@ -47,6 +47,20 @@
 - Make a 2-minute video with my submission
 - Create our devpost submission text
 
+### Timeline
+
+1. Figure out how to develop Chrome extensions
+2. Set up Google OAuth
+3. Figure out how to obscure client_id
+4. Figure out how to route between html pages
+5. Write html pages for the steps in the User story
+6. Figure out how to get the calendar info from the student link page
+7. Figure out how to export the calendar info to Google Calendar
+8. Figure out how to make the extension light up red when on a student link page
+9. Figure out how to make the button only appear when on the correct student link page
+10. Make the extension icon look nice
+11. Deploy the extension to the Chrome Web Store
+
 ### How to run locally
 - Clone the repo
 - Run `npm install`
@@ -59,7 +73,3 @@
 - Click on "Load unpacked"
 - Select the folder containing the repo
 - You have successfully run our application!
-
-### Timeline
-
-1. Figure out how to develop Chrome extensions
