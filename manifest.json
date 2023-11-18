@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Student Link to GCal",
+    "description": "Student Link GCal Exporter Chrome Extension",
+    "version": "1.0",
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "calendar.png"
+    }
+  }
