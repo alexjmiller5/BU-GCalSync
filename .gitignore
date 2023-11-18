@@ -1,2 +1,8 @@
 # ignore mac configuration files
 .DS_Store
+
+# ignore node_modules
+node_modules
+
+# obfuscate api keys and client ids
+.envrc
