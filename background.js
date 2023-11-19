@@ -1,43 +1,46 @@
-// Implement the service worker to check if the user is already authenticated on opening the extension
-// chrome.runtime.onInstalled.addListener(() => {
-//     // Perform initial setup and check for an existing token
-//     chrome.identity.getAuthToken({ interactive: false }, function (token) {
-//         if (chrome.runtime.lastError || !token) {
-//             // Not authenticated or an error occurred, set popup to OAuth
-//             chrome.action.setPopup({ popup: 'popup/popup.html' });
-//         } else {
-//             // Authenticated, set popup to parser
-//             chrome.action.setPopup({ popup: 'popup/studentLink.html' });
-//         }
-//     });
-// });
-
-// Function to update the icon and popup based on URL
-function updateIconAndPopup(tabId, url) {
-    if (url && url.includes("ModuleName=allsched.pl")) {
-        console.log(url, "is correct");
-        // Set icon to calendar-modified when URL is correct
+function updateIconAndPopup(tabId, elementFound) {
+    if (elementFound) {
+        console.log("Element with specific word found");
         chrome.action.setIcon({ path: "images/calendar.png", tabId: tabId });
-        // Set popup to parser
         chrome.action.setPopup({ popup: 'popup/parser.html' });
     } else {
-        console.log(url, "is not correct");
-        // Set icon to default when URL is not correct
+        console.log("Element not found");
         chrome.action.setIcon({ path: "images/calendar-modified.png", tabId: tabId });
-        // Set popup to default
         chrome.action.setPopup({ popup: 'popup/studentLink.html' });
     }
 }
 
-chrome.tabs.onActivated.addListener(activeInfo => {
-    chrome.tabs.get(activeInfo.tabId, function(tab) {
-        updateIconAndPopup(activeInfo.tabId, tab.url);
-    });
+chrome.runtime.onMessage.addListener((message, sender) => {
+    if (message.elementFound !== undefined) {
+        updateIconAndPopup(sender.tab.id, message.elementFound);
+    }
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    // Check if the tab URL is updated
-    if (changeInfo.url) {
-        updateIconAndPopup(tabId, changeInfo.url);
+    console.log("tab has been updated")
+    if (changeInfo.url){// && tab.url && tab.url.includes("://www.bu.edu/link/bin/")) {
+        if (tab.url && !tab.url.includes("chrome://")) {
+        chrome.scripting.executeScript({
+            target: {tabId: tabId},
+            files: ['scripts/content.js']
+        });
     }
+    }
+});
+
+// Added onActivated event listener
+chrome.tabs.onActivated.addListener(activeInfo => {
+    console.log("tab has been activated")
+    chrome.tabs.get(activeInfo.tabId, (tab) => {
+        // Check if the activated tab's URL matches the specified pattern
+        if (tab.url && !tab.url.includes("chrome://")) {
+        // if (tab.url && tab.url.includes("://www.bu.edu/link/bin/")) {
+            // Execute content script for the activated tab
+            chrome.scripting.executeScript({
+                target: {tabId: tab.id},
+                files: ['scripts/content.js']
+            });
+        // }
+        }
+    });
 });
