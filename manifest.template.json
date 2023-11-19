@@ -5,7 +5,7 @@
 	"version": "1.0",
 	"action": {
 		"default_popup": "popup/popup.html",
-		"default_icon": "images/calendar.png"
+		"default_icon": "images/calendar-modified.png"
 	},
 	"permissions": [
 		"identity",
