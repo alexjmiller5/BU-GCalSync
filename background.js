@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.identity.getAuthToken({ interactive: false }, function (token) {
         if (chrome.runtime.lastError || !token) {
             // Not authenticated or an error occurred, set popup to OAuth
-            chrome.action.setPopup({ popup: 'popup/oauth.html' });
+            chrome.action.setPopup({ popup: 'popup/popup.html' });
         } else {
             // Authenticated, set popup to parser
             chrome.action.setPopup({ popup: 'popup/parser.html' });

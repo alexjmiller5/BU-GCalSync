@@ -8,15 +8,15 @@ document.getElementById('google-sign-in-btn').addEventListener('click', function
       document.getElementById('status-message').textContent = 'Sign in successful!';
 
       // Save the token to chrome.storage
-      chrome.storage.local.set({ 'authToken': token }, function () {
-        // Check for errors
-        if (chrome.runtime.lastError) {
-          console.log('Error setting token in chrome.storage:', chrome.runtime.lastError);
-        } else {
-          // Change to the parser window
+      // chrome.storage.local.set({ 'authToken': token }, function () {
+      //   // Check for errors
+      //   if (chrome.runtime.lastError) {
+      //     console.log('Error setting token in chrome.storage:', chrome.runtime.lastError);
+      //   } else {
+      //     // Change to the parser window
           window.location.href = "parser.html";
-        }
-      });
+      //   }
+      // });
     }
   });
 });
