@@ -6,10 +6,6 @@ document.getElementById('google-sign-in-btn').addEventListener('click', function
     } else {
       // Use the token for your API calls; we'll validate the token in the background script
       document.getElementById('status-message').textContent = 'Sign in successful!';
-
-      // Change to the parser window
-      window.location.href = "parser.html";
-
     }
   });
 });
