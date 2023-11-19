@@ -48,9 +48,13 @@ By Alex Miller, William DeRocoo, Elaine Leiyoung, and Audi Khalif
 [x] Add a nice icon for our extension (maybe from [here](https://www.flaticon.com/free-icons/library))
 [x] Create our own icon with GCal's icon and Student Link's icon/The letters BU/the Rhett logo
 [x] Create a .env file to store api keys
-[ ] Make a 2-minute video with our submission
 [ ] Create our devpost submission text
 [ ] Use ChatGPT to fix up README.md
+[ ] Style buttons, font
+[ ] Explain how project fits into tracks
+[ ] Make devpost 2-minute video
+[ ] Deploy video
+
 
 ### Possible Goals if we had more time
 
@@ -59,6 +63,8 @@ By Alex Miller, William DeRocoo, Elaine Leiyoung, and Audi Khalif
 - Create a backend decoupled
 - Move our processing to the scripts folder from the popups folder
 - Add more extensive comments to our code
+- Check web contents of student link for class schedule (to render GCal export button)
+- On installation, check if we should go immediately to GCal export button
 
 ### Timeline
 
