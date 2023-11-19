@@ -13,6 +13,7 @@
     font-family: 'Lato', sans-serif; /* Use a standard font for consistency */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border-radius: 10px; /* Rounded corners */
+    font-size: 14px;
 }
 
 #instruction-container {
@@ -22,6 +23,7 @@
 #instruction-container h1 {
     color: #4285F4; /* Complementary color for headings */
     margin-bottom: 15px;
+    font-size: 30px;
 }
 
 #instruction-container p, #instruction-container ol {
