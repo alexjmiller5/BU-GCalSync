@@ -43,17 +43,17 @@ By Alex Miller, William DeRocoo, Elaine Leiyoung, and Audi Khalif
 
 ### Features to add:
 
-[x] Chrome extension should light up colored when on a page that has a student link calendar
-[x] Button to export should only appear when on correct student link course schedule page
-[x] Add a nice icon for our extension (maybe from [here](https://www.flaticon.com/free-icons/library))
-[x] Create our own icon with GCal's icon and Student Link's icon/The letters BU/the Rhett logo
-[x] Create a .env file to store api keys
-[ ] Create our devpost submission text
-[ ] Use ChatGPT to fix up README.md
-[ ] Style buttons, font
-[ ] Explain how project fits into tracks
-[ ] Make devpost 2-minute video
-[ ] Deploy video
+- [x] Chrome extension should light up colored when on a page that has a student link calendar
+- [x] Button to export should only appear when on correct student link course schedule page
+- [x] Add a nice icon for our extension (maybe from [here](https://www.flaticon.com/free-icons/library))
+- [x] Create our own icon with GCal's icon and Student Link's icon/The letters BU/the Rhett logo
+- [x] Create a .env file to store api keys
+- [x] Create our devpost submission text
+- [ ] Use ChatGPT to fix up README.md
+- [x] Style buttons, font
+- [x] Explain how project fits into tracks
+- [x] Make devpost 2-minute video
+- [ ] Deploy to Chrome Web Store
 
 
 ### Possible Goals if we had more time
