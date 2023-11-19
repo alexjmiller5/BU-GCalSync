@@ -4,6 +4,8 @@
 # ignore node_modules
 node_modules
 
-# obfuscate api keys and client ids
+# load api keys and client ids in environment shell
 .envrc
+
+# ignore build file with api keys and client ids
 manifest.json

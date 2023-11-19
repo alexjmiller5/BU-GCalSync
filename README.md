@@ -46,12 +46,13 @@
 - Create a .env file to store api keys
 - Make a 2-minute video with my submission
 - Create our devpost submission text
+- Move our processing to the scripts folder from the popups folder
 
 ### Timeline
 
 1. Figure out how to develop Chrome extensions
 2. Set up Google OAuth
-3. Figure out how to obscure client_id
+3. Figure out how to obscure CLIENT_ID
 4. Figure out how to route between html pages
 5. Write html pages for the steps in the User story
 6. Figure out how to get the calendar info from the student link page
