@@ -1,23 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 .studentLink {
-    width: 400px; /* Set the width you want */
-    height: 100px; /* Set the height you want */
-    margin: 0;
-    padding: 0;
+    width: 400px;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh; /* Use the full height of the screen */
+    height: 90vh; /* Use the full height of the screen */
+    background-color: #f4f4f4; /* Light background color */
+    font-family: 'Lato', sans-serif; /* Use a standard font for consistency */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 14px;
 }
 
+#instruction-container {
+    text-align: center;
+}
+
+#instruction-container h1 {
+    color: #4285F4; /* Complementary color for headings */
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+#instruction-container p, #instruction-container ol {
+    color: #333; /* Dark color for text */
+    line-height: 1.6; /* Improved line spacing for readability */
+}
+
+#instruction-container ol {
+    text-align: left; /* Align list items to the left */
+    padding-left: 20px; /* Spacing for list items */
+}
+
+#instruction-container ol li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+#instruction-container a {
+    color: #357ae8; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+#instruction-container a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+
+
+
+
+
+
+/* General styles for the parser class (Container) */
 .parser {
-    width: 100px; /* Set the width you want */
-    height: 20px; /* Set the height you want */
-    margin: 0;
-    padding: 0;
+    width: 385px;
+    height: 50px;
+    margin: auto; /* Center the container */
+    padding-top: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh; /* Use the full height of the screen */
+    font-family: 'Lato', sans-serif; /* Use a standard font for consistency */
+}
+
+/* Styles for the button */
+#google-sign-in-btn-scraper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #4285F4; /* Google's blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#google-sign-in-btn-scraper:hover {
+    background-color: #357ae8; /* Slightly darker blue on hover */
+    transform: scale(1.05); /* Slight increase in size */
+}
+
+#google-sign-in-btn-scraper:active {
+    background-color: #2a65c0; /* Even darker blue when active */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Smaller shadow for a "pressed" effect */
+}
+
+.italic {
+    font-style: italic;
 }

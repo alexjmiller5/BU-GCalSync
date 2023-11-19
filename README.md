@@ -50,7 +50,7 @@ By Alex Miller, William DeRocoo, Elaine Leiyoung, and Audi Khalif
 [x] Create a .env file to store api keys
 [ ] Create our devpost submission text
 [ ] Use ChatGPT to fix up README.md
-[ ] Style buttons, font
+[x] Style buttons, font
 [ ] Explain how project fits into tracks
 [ ] Make devpost 2-minute video
 [ ] Deploy video
