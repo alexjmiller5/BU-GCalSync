@@ -47,6 +47,7 @@
 - Make a 2-minute video with my submission
 - Create our devpost submission text
 - Move our processing to the scripts folder from the popups folder
+- Implement the school's calendar for the classes
 
 ### Timeline
 
