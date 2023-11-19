@@ -1,4 +1,4 @@
-body {
+.studentLink {
     width: 400px; /* Set the width you want */
     height: 100px; /* Set the height you want */
     margin: 0;
@@ -10,6 +10,14 @@ body {
     height: 100vh; /* Use the full height of the screen */
 }
 
-#login-container {
-    text-align: center; /* Center text for the inner content */
+.parser {
+    width: 100px; /* Set the width you want */
+    height: 20px; /* Set the height you want */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Use the full height of the screen */
 }

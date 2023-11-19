@@ -1,16 +1,16 @@
 // Implement the service worker to check if the user is already authenticated on opening the extension
-chrome.runtime.onInstalled.addListener(() => {
-    // Perform initial setup and check for an existing token
-    chrome.identity.getAuthToken({ interactive: false }, function (token) {
-        if (chrome.runtime.lastError || !token) {
-            // Not authenticated or an error occurred, set popup to OAuth
-            chrome.action.setPopup({ popup: 'popup/popup.html' });
-        } else {
-            // Authenticated, set popup to parser
-            chrome.action.setPopup({ popup: 'popup/studentLink.html' });
-        }
-    });
-});
+// chrome.runtime.onInstalled.addListener(() => {
+//     // Perform initial setup and check for an existing token
+//     chrome.identity.getAuthToken({ interactive: false }, function (token) {
+//         if (chrome.runtime.lastError || !token) {
+//             // Not authenticated or an error occurred, set popup to OAuth
+//             chrome.action.setPopup({ popup: 'popup/popup.html' });
+//         } else {
+//             // Authenticated, set popup to parser
+//             chrome.action.setPopup({ popup: 'popup/studentLink.html' });
+//         }
+//     });
+// });
 
 // Function to update the icon and popup based on URL
 function updateIconAndPopup(tabId, url) {

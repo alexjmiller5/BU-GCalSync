@@ -4,7 +4,7 @@
 	"description": "Student Link GCal Exporter Chrome Extension",
 	"version": "1.0",
 	"action": {
-		"default_popup": "popup/popup.html",
+		"default_popup": "popup/studentLink.html",
 		"default_icon": "images/calendar-modified.png"
 	},
 	"permissions": [

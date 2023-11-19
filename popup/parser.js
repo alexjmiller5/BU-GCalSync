@@ -1,4 +1,16 @@
-document.getElementById('scrapeButton').addEventListener('click', async () => {
+document.getElementById('google-sign-in-btn-scraper').addEventListener('click', function () {
+    chrome.identity.getAuthToken({ interactive: true }, function (token) {
+        if (chrome.runtime.lastError) {
+            document.getElementById('status-message').textContent = 'Sign in failed. Please try again.';
+            console.log(chrome.runtime.lastError);
+        } else {
+            // Use the token for your API calls; we'll validate the token in the background script
+            document.getElementById('status-message').textContent = 'Sign in successful!';
+        }
+    });
+});
+
+document.getElementById('google-sign-in-btn-scraper').addEventListener('click', async () => {
     try {
         console.log("User wants to parse their schedule");
         let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -23,7 +35,7 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
                     })
 
                 })
-              
+
                 chrome.identity.getAuthToken({ interactive: false }, function (token) {
                     if (chrome.runtime.lastError) {
                         console.error('Error retrieving the auth token:', chrome.runtime.lastError);
