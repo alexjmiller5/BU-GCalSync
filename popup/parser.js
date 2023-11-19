@@ -24,7 +24,7 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
 
                 })
               
-                chrome.identity.getAuthToken({ interactive: true }, function (token) {
+                chrome.identity.getAuthToken({ interactive: false }, function (token) {
                     if (chrome.runtime.lastError) {
                         console.error('Error retrieving the auth token:', chrome.runtime.lastError);
                     } else {
