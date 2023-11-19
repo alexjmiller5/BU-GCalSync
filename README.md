@@ -1,4 +1,8 @@
-# BHacks-2023
+# BU CalSync: Exporting StudentLink to Google Calendar
+
+By Alex Miller, William DeRocoo, Elaine Leiyoung, and Audi Khalif
+
+[Submission to BostonHacks 2023]()
 
 ## Initial Brainstorming
 - Alarm app with picture if you sleep in that’s sent to all your friends
@@ -38,16 +42,23 @@
 9. Export to Google Calendar successfully!
 
 ### Features to add:
-- Chrome extension should light up red when on a page that has a student link calendar
-- Button to export should only appear when on correct student link course schedule page
-- Backend to obscure api keys
-- Add a nice icon for our extension (maybe from [here](https://www.flaticon.com/free-icons/library))
-- Create our own icon with GCal's icon and Student Link's icon/The letters BU
-- Create a .env file to store api keys
-- Make a 2-minute video with my submission
-- Create our devpost submission text
-- Move our processing to the scripts folder from the popups folder
+
+[x] Chrome extension should light up colored when on a page that has a student link calendar
+[x] Button to export should only appear when on correct student link course schedule page
+[x] Add a nice icon for our extension (maybe from [here](https://www.flaticon.com/free-icons/library))
+[x] Create our own icon with GCal's icon and Student Link's icon/The letters BU/the Rhett logo
+[x] Create a .env file to store api keys
+[ ] Make a 2-minute video with our submission
+[ ] Create our devpost submission text
+[ ] Use ChatGPT to fix up README.md
+
+### Possible Goals if we had more time
+
 - Implement the school's calendar for the classes
+- Allow user to input semester start and end dates (currently the app only works for Fall 2023)
+- Create a backend decoupled
+- Move our processing to the scripts folder from the popups folder
+- Add more extensive comments to our code
 
 ### Timeline
 
@@ -64,16 +75,23 @@
 11. Deploy the extension to the Chrome Web Store
 
 ### How to run locally
+
 - Clone the repo
 - Run `npm install`
 - Install direnv following (mac can use `brew install direnv`) [its documentation](https://direnv.net/docs/installation.html)
 - Set up direnv in your shell [its documentation](https://direnv.net/docs/hook.html)
 - Create your `.envrc` file
-- Add you client id as `export CLIENT_ID="YOUR_CLIENT_ID"` to your `.envrc` file after you set up the OAuth on [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+- Add you client id as `export CLIENT_ID=YOUR_CLIENT_ID` to your `.envrc` file after you set up the OAuth on [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
 - Run `direnv allow`
 - Run `npm run build`
 - Go to `chrome://extensions/` in your browser
 - Turn on developer mode
 - Click on "Load unpacked"
 - Select the folder containing the repo
-- You have successfully run our application!
+
+### Dependencies
+
+- node
+- npm
+- fs (a node module)
+- direnv (installed using homebrew)
