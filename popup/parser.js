@@ -13,14 +13,14 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
                 const parserResults = results[0].result;
                 console.log('Parsed content:', parserResults);
                 // You can now do something with the parserResults
-                chrome.storage.local.get('authToken', function (data) {
-                    if (chrome.runtime.lastError) {
-                        console.log('Error getting token from chrome.storage:', chrome.runtime.lastError);
-                    } else {
-                        let token = data.authToken;
-                        createCalendarEvent(token, parserResults);
-                    }
-                });
+                // chrome.storage.local.get('authToken', function (data) {
+                //     if (chrome.runtime.lastError) {
+                //         console.log('Error getting token from chrome.storage:', chrome.runtime.lastError);
+                //     } else {
+                //         let token = data.authToken;
+                //         createCalendarEvent(token, parserResults);
+                //     }
+                // });
             }
         });
     } catch (err) {
