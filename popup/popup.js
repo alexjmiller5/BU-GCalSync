@@ -9,6 +9,7 @@ document.getElementById('google-sign-in-btn').addEventListener('click', function
 
       // Change to the parser window
       window.location.href = "parser.html";
+
     }
   });
 });

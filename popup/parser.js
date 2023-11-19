@@ -10,6 +10,7 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
             if (chrome.runtime.lastError) {
                 console.error('Script execution failed: ', chrome.runtime.lastError.message);
             } else if (results && results.length > 0) {
+
                 const courses = results[0].result;
                 console.log('Parsed content (courses):', courses);
 
@@ -22,7 +23,7 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
                     })
 
                 })
-
+              
                 chrome.identity.getAuthToken({ interactive: true }, function (token) {
                     if (chrome.runtime.lastError) {
                         console.error('Error retrieving the auth token:', chrome.runtime.lastError);

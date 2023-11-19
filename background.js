@@ -12,6 +12,21 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 });
 
+chrome.tabs.onActivated.addListener(activeInfo => {
+    chrome.tabs.get(activeInfo.tabId, function(tab) {
+        if (tab.url && tab.url.includes("link/bin/uiscgi_studentlink.pl")) {
+            console.log(tab.url, "is correct");
+            // Set popup to parser
+            chrome.action.setPopup({ popup: 'popup/parser.html' });
+        } else {
+            console.log(tab.url, "is not correct");
+            // Set popup to default
+            chrome.action.setPopup({ popup: 'popup/studentLink.html' });
+        }
+    });
+});
+
+
 // chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 //     if (changeInfo.status === 'complete') {
 //         checkTabAndRunScript(tabId, tab.url);
