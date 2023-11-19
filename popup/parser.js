@@ -13,29 +13,28 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
 
                 const courses = results[0].result;
                 console.log('Parsed content (courses):', courses);
-                
+
                 // convert the courselist to a list of Google Calendar compatible events
                 events = []
                 courses.forEach(function (course) {
                     calendarEvents = courseToCalendarEvents(course)
-                    calendarEvents.forEach(function(calendarEvent){
+                    calendarEvents.forEach(function (calendarEvent) {
                         events.push(calendarEvent)
                     })
-                    
+
                 })
-                // chrome.storage.local.get('authToken', function (data) {
-                //     if (chrome.runtime.lastError) {
-                //         console.log('Error getting token from chrome.storage:', chrome.runtime.lastError);
-                //     } else {
-                //         let token = data.authToken;
-
-
-                //         // add all the events to the user's Google Calendar
-                //         events.forEach(function (calendarEvent) {
-                //             createGCalendarEvent(token, parserResults);
-                //         })
-                //     }
-                // });
+              
+                chrome.identity.getAuthToken({ interactive: true }, function (token) {
+                    if (chrome.runtime.lastError) {
+                        console.error('Error retrieving the auth token:', chrome.runtime.lastError);
+                    } else {
+                        // Add all the events to the user's Google Calendar
+                        events.forEach(function (calendarEvent) {
+                            createGCalendarEvent("Attempting to add an event to the user's calendar...");
+                            createGCalendarEvent(token, calendarEvent);
+                        })
+                    }
+                })
             }
         });
     } catch (err) {
@@ -66,8 +65,8 @@ function createGCalendarEvent(authToken, event) {
 
 function convertDateFormatToGCal(time, date) {
     function convertTime12to24(time12h) {
-        
-        const [time, modifier] = [time12h.substring(0, time12h.length-2), time12h.substring(time12h.length-2)];
+
+        const [time, modifier] = [time12h.substring(0, time12h.length - 2), time12h.substring(time12h.length - 2)];
         let [hours, minutes] = time.split(':');
 
         if (hours === '12') {
@@ -97,7 +96,7 @@ function courseToCalendarEvents(course) {
         "ASC": "Elliot Cole Academic Support Center, 300 Ashford St, Boston, MA 02134",
         "BRB": "Boston University Biology Research Building, 5 Cummington Mall, Boston, MA 02215",
         "BSC": "Boston University Biological Science Center, 2 Cummington Mall, Boston, MA 02215",
-        "CAS": "College of Arts and Sciences, 685–725 Commonwealth Ave, Boston, MA 02215",
+        "CAS": "College of Arts and Sciences, 685â€“725 Commonwealth Ave, Boston, MA 02215",
         "CDS": "BU Faculty of Computing & Data Sciences, 645-665 Commonwealth Avenue, Boston, MA 02215",
         "CFA": "College of Fine Arts, 855 Commonwealth Ave, Boston, MA 02215",
         "CGS": "College of General Studies, 871 Commonwealth Ave, Boston, MA 02215",
@@ -109,7 +108,7 @@ function courseToCalendarEvents(course) {
         "EIB": "BU Editorial Institute, 143 Bay State Rd, Boston, MA 02215",
         "EMA": "Boston University Engineering Manufacturing Annex, 730 Commonwealth Ave, Boston, MA 02215",
         "EMB": "Boston University Engineering Manufacturing Building, 15 St Mary's St, Brookline, MA 02446",
-        "ENG": "College of Engineering, 110–112 Cummington Mall, Boston, MA 02215",
+        "ENG": "College of Engineering, 110â€“112 Cummington Mall, Boston, MA 02215",
         "EOP": "Center for English Language, 890 Commonwealth Avenue, Boston, MA 02215",
         "EPC": "Engineering Product Innovation Center, 750 Commonwealth Ave, Brookline, MA 02446",
         "ERA": "Boston University Engineering Research Annex, 48 Cummington Mall, Boston, MA 02215",
@@ -144,7 +143,7 @@ function courseToCalendarEvents(course) {
         "PHO": "Boston University Photonics Building, 6-8 St Mary's St, Boston, MA 02215",
         "PLS": "Anthropology, Philosophy, Political Science, 232 Bay State Road, Boston, MA 02215",
         "PRB": "Boston University Physics Research Building, 3 Cummington Mall, Boston, MA 02215",
-        "PSY": "Department of Psychological and Brain Sciences, 64–72–86 Cummington Mall # 149, Boston, MA 02215",
+        "PSY": "Department of Psychological and Brain Sciences, 64â€“72â€“86 Cummington Mall # 149, Boston, MA 02215",
         "PTH": "Boston Playwrights' Theatre, 949 Commonwealth Ave, Boston, MA 02215",
         "REL": "CAS Religion, 145 Bay State Road, Boston, MA 02215",
         "RKC": "Rajen Kilachand Center for Integrated Life Sciences & Engineering, 610 Commonwealth Ave, Boston, MA 02215",
@@ -154,7 +153,7 @@ function courseToCalendarEvents(course) {
         "SCI": "Metcalf Center for Science and Engineering, 590-596 Commonwealth Avenue, MA 02215",
         "SDM": "Henry M. Goldman School of Dental Medicine, 100 East Newton Street, Boston, MA 02118",
         "SHA": "Boston University School of Hospitality Administration, 928 Commonwealth Ave, Boston, MA 02215",
-        "SLB": "Science and Engineering Library, 30–38 Cummington Mall, MA 02215",
+        "SLB": "Science and Engineering Library, 30â€“38 Cummington Mall, MA 02215",
         "SOC": "Department of Sociology, 96-100 Cummington Mall # 260, Boston, MA 02215",
         "SPH": "Boston University School of Public Health, 715 Albany St, Boston, MA 02118",
         "SSW": "School of Social Work, 264-270 Bay State Rd, Boston, MA 02215",
@@ -177,19 +176,19 @@ function courseToCalendarEvents(course) {
         'Sat': 4
     };
 
-    const semesterEndDate = "20231212T170000Z"
+    const semesterEndDate = "20231212T000000Z"
 
 
     classDays = course['days'].split(',')
 
     calendarEvents = []
 
-    classDays.forEach(function(classDay){
+    classDays.forEach(function (classDay) {
         const firstDayofClass = "2023-09-0" + (5 + weekdayToInt[classDay])
         calendarEvent = {
             summary: course['code'].split(/\s+/)[1] + " " + course['type'] + " @" + course['code'].split(/\s+/)[0] + " " + course['room'],
             location: buildingAbbreviations[course['location']],
-            recurrence: 'RRULE:FREQ=WEEKLY;UNTIL=' + semesterEndDate,
+            recurrence: ['RRULE:FREQ=WEEKLY;UNTIL=' + semesterEndDate],
             start: {
                 dateTime: convertDateFormatToGCal(course['start'], firstDayofClass),
                 timeZone: 'America/New_York'
