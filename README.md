@@ -48,6 +48,7 @@
 - Create our devpost submission text
 - Move our processing to the scripts folder from the popups folder
 - Implement the school's calendar for the classes
+- Allow user to input semester start and end dates
 
 ### Timeline
 
@@ -69,7 +70,7 @@
 - Install direnv following (mac can use `brew install direnv`) [its documentation](https://direnv.net/docs/installation.html)
 - Set up direnv in your shell [its documentation](https://direnv.net/docs/hook.html)
 - Create your `.envrc` file
-- Add you client id as `export CLIENT_ID="YOUR_CLIENT_ID"` to your `.envrc` file after you set up the OAuth on [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+- Add you client id as `export CLIENT_ID=YOUR_CLIENT_ID` to your `.envrc` file after you set up the OAuth on [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
 - Run `direnv allow`
 - Run `npm run build`
 - Go to `chrome://extensions/` in your browser
