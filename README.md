@@ -1,4 +1,4 @@
-# BU CalSync
+# BU CalSync: Exporting StudentLink to Google Calendar
 
 By Alex Miller, William DeRocoo, Elaine Leiyoung, and Audi Khalif
 
@@ -59,7 +59,6 @@ By Alex Miller, William DeRocoo, Elaine Leiyoung, and Audi Khalif
 - Create a backend decoupled
 - Move our processing to the scripts folder from the popups folder
 - Add more extensive comments to our code
-
 
 ### Timeline
 
