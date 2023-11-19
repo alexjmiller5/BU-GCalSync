@@ -7,7 +7,9 @@ document.getElementById('google-sign-in-btn').addEventListener('click', function
       // Use the token for your API calls; we'll validate the token in the background script
       document.getElementById('status-message').textContent = 'Sign in successful!';
 
+
       // Save the token to chrome.storage
+
       // chrome.storage.local.set({ 'authToken': token }, function () {
       //   // Check for errors
       //   if (chrome.runtime.lastError) {

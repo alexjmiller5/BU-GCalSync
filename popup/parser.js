@@ -10,6 +10,7 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
             if (chrome.runtime.lastError) {
                 console.error('Script execution failed: ', chrome.runtime.lastError.message);
             } else if (results && results.length > 0) {
+
                 const courses = results[0].result;
                 console.log('Parsed content (courses):', courses);
                 
@@ -22,12 +23,12 @@ document.getElementById('scrapeButton').addEventListener('click', async () => {
                     })
                     
                 })
-
                 // chrome.storage.local.get('authToken', function (data) {
                 //     if (chrome.runtime.lastError) {
                 //         console.log('Error getting token from chrome.storage:', chrome.runtime.lastError);
                 //     } else {
                 //         let token = data.authToken;
+
 
                 //         // add all the events to the user's Google Calendar
                 //         events.forEach(function (calendarEvent) {
